@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="../style.css">
     <title>Mi currículum</title>
   </head>
@@ -20,25 +21,56 @@
       </div>
   
     <section id="infopersonalseccion">
-      <h3>Información personal</h3>
+     <button onclick="addField('infopersonalseccion', document.getElementById('infocampo').value , document.getElementById('infovalor').value,);">Agregar</button>
+     <input type="text" id="infocampo" name="infocampo">
+     <input type="text" id="infovalor" name="infovalor">
+     <button onclick="editField('infopersonalseccion', document.getElementById('infocampoed').value , document.getElementById('infovalored').value,);">Editar</button>
+     <input type="text" id="infocampoed" name="infocampoed">
+     <input type="text" id="infovalored" name="infovalored">
+     <h3>Información personal</h3>
       <p>Dirección:</p>
       <p>Teléfono:</p>
       <p>Email:</p>
     </section>
     <section id="educacionSeccion">
+      <button onclick="addField('educacionSeccion', document.getElementById('educampo').value , document.getElementById('eduvalor').value,);">Agregar</button>
+      <input type="text" id="educampo" name="educampo">
+      <input type="text" id="eduvalor" name="eduvalor">
+      <button onclick="editField('educacionSeccion', document.getElementById('educampoed').value , document.getElementById('eduvalored').value, document.getElementById('educampoed2').value , document.getElementById('eduvalored2').value);">Editar</button>
+      <input type="text" id="educampoed" name="educampoed">
+      <input type="text" id="eduvalored" name="eduvalored">
+      <input type="text" id="educampoed2" name="educampoed2">
+      <input type="text" id="eduvalored2" name="eduvalored2">
+  
       <h3>Educación</h3>
       <h4>Universidad XYZ - Título obtenido</h4>
       <p>Fechas de asistencia</p>
     </section>
     <section id="experienciaSeccion">
+      <button onclick="addField('experienciaSeccion', document.getElementById('excampo').value , document.getElementById('exvalor').value,document.getElementById('exvalor2').value);">Agregar</button>
+      <input type="text" id="excampo" name="excampo">
+      <input type="text" id="exvalor" name="exvalor">
+      <input type="text" id="exvalor2" name="exvalor2">
+      <button onclick="editField('experienciaSeccion', document.getElementById('excampoed').value , document.getElementById('exvalored').value, document.getElementById('excampoed2').value , document.getElementById('exvalored2').value, document.getElementById('excampoed3').value , document.getElementById('exvalored3').value);">Editar</button>
+      <input type="text" id="excampoed" name="excampoed">
+      <input type="text" id="exvalored" name="exvalored">
+      <input type="text" id="excampoed2" name="excampoed2">
+      <input type="text" id="exvalored2" name="exvalored2">
+      <input type="text" id="excampoed3" name="excampoed3">
+      <input type="text" id="exvalored3" name="exvalored3">
+
       <h3>Experiencia laboral</h3>
       <h4>Empresa ABC - Cargo</h4>
       <p>Fechas de trabajo</p>
       <p>Descripción del trabajo</p>
     </section>
     <section id="habilidadesSeccion">          
+      <button onclick="addField('habilidadesSeccion', document.getElementById('hacampo').value , document.getElementById('hacampo').value,);">Agregar</button>
+      <input type="text" id="hacampo" name="hacampo">
+      
+
       <h3>Habilidades</h3>
-      <ul>
+      <ul id="lista">
         <li>Habilidad 1</li>
         <li>Habilidad 2</li>
         <li>Habilidad 3</li>
