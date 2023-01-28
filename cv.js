@@ -59,35 +59,122 @@ sections.forEach(function(section) {
 });
 
 
-//Agregar un campo nuevo:
-// Obtener el botón para agregar un campo nuevo
-let addBtn = document.getElementById("addBtn");
+//Función para agregar un nuevo campo a una sección específica
+function addField(sectionId, fieldName, fieldValue,fieldValue2) {
+  var section = document.getElementById(sectionId);
+  switch(section.id){
+  case "infopersonalseccion":  
+  var newField = document.createElement("div");
+  newField.innerHTML = "<p>" + fieldName + ":"+ fieldValue+"</p> ";
+  section.appendChild(newField);
+  break
+  case "educacionSeccion":  
+  var newField = document.createElement("div");
+  newField.innerHTML = "<h4 id="+fieldName+" >" + fieldName +"</h4> ";
+  section.appendChild(newField);
+  var newp = document.createElement("p");
+  var fieldN = document.getElementById(fieldName);
+  newp.innerHTML = "<p>"+ fieldValue +"</p> ";
+  section.appendChild(newp);  
+  break
+  case "experienciaSeccion":  
+  var newField = document.createElement("div");
+  newField.innerHTML = "<h4 id="+fieldName+" >" + fieldName +"</h4> ";
+  section.appendChild(newField);
+  var newp = document.createElement("p");
+  var fieldN = document.getElementById(fieldName);
+  newp.innerHTML = "<p>"+ fieldValue +"</p> ";
+  section.appendChild(newp); 
+  var newp2 = document.createElement("p");
+  newp2.innerHTML = "<p>"+ fieldValue2 +"</p> ";
+  section.appendChild(newp2); 
 
-addBtn.addEventListener("click", function() {
-  let newField = document.createElement("input");
-  newField.type = "text";
-  newField.placeholder = "Nuevo campo";
-  newField.classList.add("new-field");
-  
-  let container = document.getElementById("container");
-  container.appendChild(newField);
-});
-//Modificar un campo existente:
-// Obtener el botón para modificar un campo existente
-let editBtn = document.getElementById("editBtn");
+  break
+  case "habilidadesSeccion":  
+  var lista = document.getElementById("lista"); 
+  var newField = document.createElement("li");
+  var nuevo = document.createTextNode(fieldName);
+  newField.appendChild(nuevo);
+  lista.appendChild(newField);
 
-editBtn.addEventListener("click", function() {
-  let existingField = document.getElementById("existingField");
-  existingField.value = "Nuevo valor";
-});
-//Eliminar un campo existente:
-// Obtener el botón para eliminar un campo existente
-let deleteBtn = document.getElementById("deleteBtn");
+  break
 
-deleteBtn.addEventListener("click", function() {
-  let existingField = document.getElementById("existingField");
-  existingField.remove();
-});
+  default:
+  break
+  }
+
+}
+
+//Función para modificar el valor de un campo existente en una sección específica
+function editField(sectionId, fieldName, newValue, fieldName2, newValue2, fieldName3, newValue3) {
+  var section = document.getElementById(sectionId);
+  switch(section.id){
+  case "infopersonalseccion":    
+  var fields = section.getElementsByTagName("p");
+  for(var i = 0; i < fields.length; i++) {
+    if(fields[i].innerHTML.indexOf(fieldName) !== -1) {
+      fields[i].innerHTML = "<p>" + newValue + ":</p> ";
+      break;
+    }
+  }
+  break
+  case "educacionSeccion":
+    var fields = section.getElementsByTagName("h4");
+    for(var i = 0; i < fields.length; i++) {
+      if(fields[i].innerHTML.indexOf(fieldName) !== -1) {
+        fields[i].innerHTML = "<h4>" + newValue + "</h4>";
+        break;
+      }
+    }
+  var fields = section.getElementsByTagName("p");
+    for(var i = 0; i < fields.length; i++) {
+      if(fields[i].innerHTML.indexOf(fieldName2) !== -1) {
+        fields[i].innerHTML = "<p>" + newValue2 + "</p> ";
+        break;
+      }
+    }
+
+  break
+  case "experienciaSeccion":
+    var fields = section.getElementsByTagName("h4");
+    for(var i = 0; i < fields.length; i++) {
+      if(fields[i].innerHTML.indexOf(fieldName) !== -1) {
+        fields[i].innerHTML = "<h4>" + newValue + "</h4>";
+        break;
+      }
+    }
+  var fields = section.getElementsByTagName("p");
+    for(var i = 0; i < fields.length; i++) {
+      if(fields[i].innerHTML.indexOf(fieldName2) !== -1) {
+        fields[i].innerHTML = "<p>" + newValue2 + "</p> ";
+        break;
+      }
+    }
+    for(var i = 0; i < fields.length; i++) {
+      if(fields[i].innerHTML.indexOf(fieldName3) !== -1) {
+        fields[i].innerHTML = "<p>" + newValue3 + "</p> ";
+        break;
+      }
+    }
+
+  break
+
+  default :
+  break
+  }
+}
+
+//Función para eliminar un campo existente en una sección específica
+function deleteField(sectionId, fieldName) {
+  var section = document.getElementById(sectionId);
+  var fields = section.getElementsByTagName("div");
+  for(var i = 0; i < fields.length; i++) {
+    if(fields[i].innerHTML.indexOf(fieldName) !== -1) {
+      section.removeChild(fields[i]);
+      break;
+    }
+  }
+}
 
 //Validar formulario de contacto
 
