@@ -158,6 +158,16 @@ function editField(sectionId, fieldName, newValue, fieldName2, newValue2, fieldN
     }
 
   break
+  case "habilidadesSeccion":
+    var fields = section.getElementsByTagName("li");
+    for(var i = 0; i < fields.length; i++) {
+      if(fields[i].innerHTML.indexOf(fieldName) !== -1) {
+        fields[i].innerHTML = "<li>" + newValue + "</li>";
+        break;
+      }
+    }
+
+  break
 
   default :
   break
@@ -176,12 +186,34 @@ function deleteField(sectionId, fieldName) {
   }
 }
 
+const boton = document.querySelector('#boton')
+const foto = document.querySelector('#foto')
+const nombre = document.querySelector('#nombre')
+const correo = document.querySelector('#correo')
+const celu = document.querySelector('#celu')
+
+const generarUsuario = async () => {
+  const url = 'https://randomuser.me/api/?nat=ar';
+  const respuesta = await fetch(url);
+  const { results } = await respuesta.json();
+  const data = results[0]
+  console.log(data)
+
+foto.src = data.picture.medium
+nombre.textContent = data.name.first
+correo.textContent = data.email
+celu.textContent = data.phone
+
+  //return data;
+}
+boton.addEventListener('click',generarUsuario)
+//document.addEventListener('DOMContentLoaded',generarUsuario)
 //Validar formulario de contacto
 
-let form = document.getElementById("contactForm");
-let name = document.getElementById("name");
-let email = document.getElementById("email");
-let message = document.getElementById("message");
+let form = document.getElementById("contactameForm");
+let nombreForm = document.getElementById("nombreForm");
+let emailForm = document.getElementById("emailForm");
+let mensajeForm = document.getElementById("mensajeForm");
 
 form.addEventListener("submit", function(e) {
   e.preventDefault();

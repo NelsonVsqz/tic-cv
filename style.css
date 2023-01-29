@@ -3,6 +3,21 @@ body{
     font-family: Arial, sans-serif;
     background-color: rgb(56, 33, 190);
   }
+h1{
+  font-family: 'Black Han Sans', sans-serif;
+}
+h2{
+  font-family: 'Big Shoulders Inline Display', cursive;
+  font-size: xx-large;
+  font-weight: bolder;
+}
+h3{
+  font-family: 'Big Shoulders Inline Display', cursive;
+
+}
+p{
+  font-family: 'Grenze', serif;
+}
 header{
     text-align: center;
     padding: 20px;

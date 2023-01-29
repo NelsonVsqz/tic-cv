@@ -3,12 +3,26 @@
   <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="../style.css">
-    <title>Mi currículum</title>
+    <script src="https://kit.fontawesome.com/1113d6e490.js" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline+Display:wght@200&family=Black+Han+Sans&display=swap" rel="stylesheet">   
+<link href="https://fonts.googleapis.com/css2?family=Grenze:wght@700&display=swap" rel="stylesheet">
+<title>Mi currículum</title>
   </head>
   <body>
     <header>
-      <h1>Nombre Apellido</h1>
+      <div>
+      <img id="foto"  src="" alt="Foto del usuario">
+      <h1>Nombre: <span id="nombre" ></span> </h1>
+      </div>
+      <div>
+        <p>Correo: <span id="correo" ></span> </p>
+        <p>Telefono: <span id="celu" ></span> </p>
+      </div>
       <h2>Cargo deseado</h2>
+      <div>
+<button id="boton">Ver</button>
+      </div>
     </header>
     <div>
       <nav id="nav" ></nav>   
@@ -21,13 +35,15 @@
       </div>
   
     <section id="infopersonalseccion">
+
      <button onclick="addField('infopersonalseccion', document.getElementById('infocampo').value , document.getElementById('infovalor').value,);">Agregar</button>
      <input type="text" id="infocampo" name="infocampo">
      <input type="text" id="infovalor" name="infovalor">
      <button onclick="editField('infopersonalseccion', document.getElementById('infocampoed').value , document.getElementById('infovalored').value,);">Editar</button>
      <input type="text" id="infocampoed" name="infocampoed">
      <input type="text" id="infovalored" name="infovalored">
-     <h3>Información personal</h3>
+     
+     <h3><i class="fa-solid fa-stamp"></i>Información personal</h3>
       <p>Dirección:</p>
       <p>Teléfono:</p>
       <p>Email:</p>
@@ -42,7 +58,7 @@
       <input type="text" id="educampoed2" name="educampoed2">
       <input type="text" id="eduvalored2" name="eduvalored2">
   
-      <h3>Educación</h3>
+  <h3><i class="fa-solid fa-circle-nodes"></i> Educación</h3>
       <h4>Universidad XYZ - Título obtenido</h4>
       <p>Fechas de asistencia</p>
     </section>
@@ -59,7 +75,7 @@
       <input type="text" id="excampoed3" name="excampoed3">
       <input type="text" id="exvalored3" name="exvalored3">
 
-      <h3>Experiencia laboral</h3>
+      <h3><i class="fa-solid fa-circle-nodes"></i>Experiencia laboral</h3>
       <h4>Empresa ABC - Cargo</h4>
       <p>Fechas de trabajo</p>
       <p>Descripción del trabajo</p>
@@ -67,15 +83,38 @@
     <section id="habilidadesSeccion">          
       <button onclick="addField('habilidadesSeccion', document.getElementById('hacampo').value , document.getElementById('hacampo').value,);">Agregar</button>
       <input type="text" id="hacampo" name="hacampo">
+      <button onclick="editField('habilidadesSeccion', document.getElementById('hacampoed').value , document.getElementById('havalored').value, );">Editar</button>
+      <input type="text" id="hacampoed" name="hacampoed">
+      <input type="text" id="havalored" name="havalored">
       
 
-      <h3>Habilidades</h3>
+      <h3><i class="fa-solid fa-circle-nodes"></i>Habilidades</h3>
       <ul id="lista">
         <li>Habilidad 1</li>
         <li>Habilidad 2</li>
         <li>Habilidad 3</li>
       </ul>
     </section>
-  <script src="../cv.js"></script>
+    <section id="contact">
+      <div class="container">
+        <h2>Contactame</h2>
+        <form>
+          <div class="form-group">
+            <label for="nombreForm">Name</label>
+            <input type="text" class="form-control" id="nombreForm" placeholder="Completa tu nombre">
+          </div>
+          <div class="form-group">
+            <label for="emailForm">Email</label>
+            <input type="email" class="form-control" id="emailForm" placeholder="Completa tu email">
+          </div>
+          <div class="form-group">
+            <label for="mensajeForm">Mensaje</label>
+            <textarea class="form-control" id="mensajeForm" rows="3"></textarea>
+          </div>
+          <button id="contactameForm" type="submit" class="btn btn-secondary">Enviar</button>
+        </form>
+      </div>
+    </section>
+      <script src="../cv.js"></script>
   </body>
 </html>
