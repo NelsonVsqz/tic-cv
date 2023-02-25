@@ -1,120 +1,204 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" href="../style.css">
-    <script src="https://kit.fontawesome.com/1113d6e490.js" crossorigin="anonymous"></script>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline+Display:wght@200&family=Black+Han+Sans&display=swap" rel="stylesheet">   
-<link href="https://fonts.googleapis.com/css2?family=Grenze:wght@700&display=swap" rel="stylesheet">
-<title>Mi currículum</title>
-  </head>
-  <body>
-    <header>
-      <div>
-      <img id="foto"  src="" alt="Foto del usuario">
-      <h1>Nombre: <span id="nombre" ></span> </h1>
-      </div>
-      <div>
-        <p>Correo: <span id="correo" ></span> </p>
-        <p>Telefono: <span id="celu" ></span> </p>
-      </div>
-      <h2>Cargo deseado</h2>
-      <div>
-<button id="boton">Ver</button>
-      </div>
-    </header>
+
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <link rel="stylesheet" href="../style.css">
+  <script src="https://kit.fontawesome.com/1113d6e490.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline+Display:wght@200&family=Black+Han+Sans&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Grenze:wght@700&display=swap" rel="stylesheet">
+  <title>Mi currículum</title>
+</head>
+
+<body>
+  <header>
     <div>
-      <nav id="nav" ></nav>   
-      </div>
-      <div>
-  <button id="infopersonalboton">Información personal</button>      
-  <button id="educacionboton">Educacion</button>
-  <button id="experienciaboton">Experiencia</button>
-  <button id="habilidadesboton">Habilidades</button>
-      </div>
-  
-    <section id="infopersonalseccion">
+      <img id="foto" src="" alt="Foto del usuario">
+      <h1>Nombre: <span id="nombre"></span> </h1>
+    </div>
+    <div>
+      <p>Correo: <span id="correo"></span> </p>
+      <p>Telefono: <span id="celu"></span> </p>
+    </div>
+    <h2>Cargo deseado</h2>
+    <div>
+      <button id="boton" class="btn btn-success">Ver</button>
+    </div>
+  </header>
+  <div id="nav" class="button-section">
+    <!-- <nav  ></nav>-->
+  </div>
+  <div class="fixed-buttons">
+    <button id="infopersonalboton">Información personal +</button>
+    <button id="educacionboton">Educacion +</button>
+    <button id="experienciaboton">Experiencia +</button>
+    <button id="habilidadesboton">Habilidades +</button>
+  </div>
 
-     <button onclick="addField('infopersonalseccion', document.getElementById('infocampo').value , document.getElementById('infovalor').value,);">Agregar</button>
-     <input type="text" id="infocampo" name="infocampo">
-     <input type="text" id="infovalor" name="infovalor">
-     <button onclick="editField('infopersonalseccion', document.getElementById('infocampoed').value , document.getElementById('infovalored').value,);">Editar</button>
-     <input type="text" id="infocampoed" name="infocampoed">
-     <input type="text" id="infovalored" name="infovalored">
-     
-     <h3><i class="fa-solid fa-stamp"></i>Información personal</h3>
-      <p>Dirección:</p>
-      <p>Teléfono:</p>
-      <p>Email:</p>
-    </section>
-    <section id="educacionSeccion">
-      <button onclick="addField('educacionSeccion', document.getElementById('educampo').value , document.getElementById('eduvalor').value,);">Agregar</button>
-      <input type="text" id="educampo" name="educampo">
-      <input type="text" id="eduvalor" name="eduvalor">
-      <button onclick="editField('educacionSeccion', document.getElementById('educampoed').value , document.getElementById('eduvalored').value, document.getElementById('educampoed2').value , document.getElementById('eduvalored2').value);">Editar</button>
-      <input type="text" id="educampoed" name="educampoed">
-      <input type="text" id="eduvalored" name="eduvalored">
-      <input type="text" id="educampoed2" name="educampoed2">
-      <input type="text" id="eduvalored2" name="eduvalored2">
-  
-  <h3><i class="fa-solid fa-circle-nodes"></i> Educación</h3>
-      <h4>Universidad XYZ - Título obtenido</h4>
-      <p>Fechas de asistencia</p>
-    </section>
-    <section id="experienciaSeccion">
-      <button onclick="addField('experienciaSeccion', document.getElementById('excampo').value , document.getElementById('exvalor').value,document.getElementById('exvalor2').value);">Agregar</button>
-      <input type="text" id="excampo" name="excampo">
-      <input type="text" id="exvalor" name="exvalor">
-      <input type="text" id="exvalor2" name="exvalor2">
-      <button onclick="editField('experienciaSeccion', document.getElementById('excampoed').value , document.getElementById('exvalored').value, document.getElementById('excampoed2').value , document.getElementById('exvalored2').value, document.getElementById('excampoed3').value , document.getElementById('exvalored3').value);">Editar</button>
-      <input type="text" id="excampoed" name="excampoed">
-      <input type="text" id="exvalored" name="exvalored">
-      <input type="text" id="excampoed2" name="excampoed2">
-      <input type="text" id="exvalored2" name="exvalored2">
-      <input type="text" id="excampoed3" name="excampoed3">
-      <input type="text" id="exvalored3" name="exvalored3">
+  <section id="Informacion">
 
-      <h3><i class="fa-solid fa-circle-nodes"></i>Experiencia laboral</h3>
-      <h4>Empresa ABC - Cargo</h4>
-      <p>Fechas de trabajo</p>
-      <p>Descripción del trabajo</p>
-    </section>
-    <section id="habilidadesSeccion">          
-      <button onclick="addField('habilidadesSeccion', document.getElementById('hacampo').value , document.getElementById('hacampo').value,);">Agregar</button>
-      <input type="text" id="hacampo" name="hacampo">
-      <button onclick="editField('habilidadesSeccion', document.getElementById('hacampoed').value , document.getElementById('havalored').value, );">Editar</button>
-      <input type="text" id="hacampoed" name="hacampoed">
-      <input type="text" id="havalored" name="havalored">
-      
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
 
-      <h3><i class="fa-solid fa-circle-nodes"></i>Habilidades</h3>
-      <ul id="lista">
-        <li>Habilidad 1</li>
-        <li>Habilidad 2</li>
-        <li>Habilidad 3</li>
-      </ul>
-    </section>
-    <section id="contact">
-      <div class="container">
-        <h2>Contactame</h2>
-        <form>
-          <div class="form-group">
-            <label for="nombreForm">Name</label>
-            <input type="text" class="form-control" id="nombreForm" placeholder="Completa tu nombre">
+          <h3><i class="fa-solid fa-stamp"></i>Información personal</h3>
+          <p>Dirección:</p>
+          <p>Teléfono:</p>
+          <p>Email:</p>
+
+        </div>
+        <div class="col-md-6">
+
+          <div class="container2">
+            <img src="./mg/images.png" alt="Mi imagen" ondblclick="showButtons(event, 1)" onclick="hideButtons(1)">
+            <div class="button-container2" id="button-container2-1">
+              <div class="d-flex flex-column">
+                <button
+                  onclick="addField('Informacion', document.getElementById('infocampo').value , document.getElementById('infovalor').value,);">Agregar</button>
+                <input type="text" id="infocampo" name="infocampo" placeholder="Campo a agregar">
+                <input type="text" id="infovalor" name="infovalor" placeholder="Dato del nuevo campo">
+                <button
+                  onclick="editField('Informacion', document.getElementById('infocampoed').value , document.getElementById('infovalored').value,);">Editar</button>
+                <input type="text" id="infocampoed" name="infocampoed" placeholder="Nombre del campo a editar">
+                <input type="text" id="infovalored" name="infovalored" placeholder="Nuevo campo y su dato">
+              </div>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="emailForm">Email</label>
-            <input type="email" class="form-control" id="emailForm" placeholder="Completa tu email">
-          </div>
-          <div class="form-group">
-            <label for="mensajeForm">Mensaje</label>
-            <textarea class="form-control" id="mensajeForm" rows="3"></textarea>
-          </div>
-          <button id="contactameForm" type="submit" class="btn btn-secondary">Enviar</button>
-        </form>
+
+        </div>
       </div>
-    </section>
-      <script src="../cv.js"></script>
-  </body>
+    </div>
+  </section>
+  <section id="Educacion">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h3><i class="fa-solid fa-circle-nodes"></i> Educación</h3>
+          <h4>Universidad XYZ - Título obtenido</h4>
+          <p>Fechas de asistencia</p>
+
+        </div>
+        <div class="col-md-6">
+          <div class="container2">
+            <img src="./mg/images.png" alt="Mi imagen" ondblclick="showButtons(event, 2)" onclick="hideButtons(2)">
+            <div class="button-container2" id="button-container2-2">
+              <div class="d-flex flex-column">
+                <button
+                  onclick="addField('Educacion', document.getElementById('educampo').value , document.getElementById('eduvalor').value,);">Agregar</button>
+                <input type="text" id="educampo" name="educampo" placeholder="Campo a agregar">
+                <input type="text" id="eduvalor" name="eduvalor" placeholder="Subcampo a agregar">
+                <button
+                  onclick="editField('Educacion', document.getElementById('educampoed').value , document.getElementById('eduvalored').value, document.getElementById('educampoed2').value , document.getElementById('eduvalored2').value);">Editar</button>
+                <input type="text" id="educampoed" name="educampoed" placeholder="Campo a editar">
+                <input type="text" id="eduvalored" name="eduvalored" placeholder="Nuevo campo">
+                <input type="text" id="educampoed2" name="educampoed2" placeholder="Subcampo a editar">
+                <input type="text" id="eduvalored2" name="eduvalored2" placeholder="Nuevo subcampo">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="Experiencia">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h3><i class="fa-solid fa-circle-nodes"></i>Experiencia laboral</h3>
+          <h4>Empresa ABC - Cargo</h4>
+          <p>Fechas de trabajo</p>
+          <p>Descripción del trabajo</p>
+        </div>
+        <div class="col-md-6">
+
+          <div class="container2">
+            <img src="./mg/images.png" alt="Mi imagen" ondblclick="showButtons(event, 3)" onclick="hideButtons(3)">
+            <div class="button-container2" id="button-container2-3">
+              <div class="d-flex flex-column">
+
+                <button
+                  onclick="addField('Experiencia', document.getElementById('excampo').value , document.getElementById('exvalor').value,document.getElementById('exvalor2').value);">Agregar</button>
+                <input type="text" id="excampo" name="excampo" placeholder="Empresa a agregar">
+                <input type="text" id="exvalor" name="exvalor" placeholder="Fecha de trabajo a agregar">
+                <input type="text" id="exvalor2" name="exvalor2" placeholder="Descripción a agregar">
+                <button
+                  onclick="editField('Experiencia', document.getElementById('excampoed').value , document.getElementById('exvalored').value, document.getElementById('excampoed2').value , document.getElementById('exvalored2').value, document.getElementById('excampoed3').value , document.getElementById('exvalored3').value);">Editar</button>
+                <input type="text" id="excampoed" name="excampoed" placeholder="Empresa a editar">
+                <input type="text" id="exvalored" name="exvalored" placeholder="Nueva empresa">
+                <input type="text" id="excampoed2" name="excampoed2" placeholder="Fecha a editar">
+                <input type="text" id="exvalored2" name="exvalored2" placeholder="Nueva fecha">
+                <input type="text" id="excampoed3" name="excampoed3" placeholder="Descripcion a editar">
+                <input type="text" id="exvalored3" name="exvalored3" placeholder="Nueva descripción">
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <section id="Habilidades">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h3><i class="fa-solid fa-circle-nodes"></i>Habilidades</h3>
+          <ul id="lista">
+            <li>Habilidad 1</li>
+            <li>Habilidad 2</li>
+            <li>Habilidad 3</li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <div class="container2">
+            <img src="./mg/images.png" alt="Mi imagen" ondblclick="showButtons(event, 4)" onclick="hideButtons(4)">
+            <div class="button-container2" id="button-container2-4">
+              <div class="d-flex flex-column">
+                <button
+                  onclick="addField('Habilidades', document.getElementById('hacampo').value , document.getElementById('hacampo').value,);">Agregar</button>
+                <input type="text" id="hacampo" name="hacampo" placeholder="Habilidad nueva">
+                <button
+                  onclick="editField('Habilidades', document.getElementById('hacampoed').value , document.getElementById('havalored').value, );">Editar</button>
+                <input type="text" id="hacampoed" name="hacampoed" placeholder="Habilidad a editar">
+                <input type="text" id="havalored" name="havalored" placeholder="Nueva habilidad">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="Contacto">
+    <div class="container">
+      <h2>Contactame</h2>
+      <form>
+        <div class="form-group">
+          <label for="nombreForm">Name</label>
+          <input type="text" class="form-control" id="nombreForm" placeholder="Completa tu nombre">
+          <div class="invalid-feedback">Por favor completa tu nombre</div>
+        </div>
+        <div class="form-group">
+          <label for="emailForm">Email</label>
+          <input type="email" class="form-control" id="emailForm" placeholder="Completa tu email">
+          <div class="invalid-feedback">Por favor completa tu email</div>
+        </div>
+        <div class="form-group">
+          <label for="mensajeForm">Mensaje</label>
+          <textarea class="form-control" id="mensajeForm" rows="3"></textarea>
+          <div class="invalid-feedback">Por favor escribe tu mensaje</div>
+        </div>
+        <button id="contactameForm" type="submit" class="btn btn-secondary">Enviar</button>
+      </form>    </div>
+  </section>
+  <script src="../cv.js"></script>
+</body>
+
 </html>
