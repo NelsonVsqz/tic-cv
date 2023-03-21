@@ -1,44 +1,58 @@
-// Obtener los botones para mostrar y ocultar secciones
-let info = document.getElementById("infopersonalboton");
-let educacion = document.getElementById("educacionboton");
-let experiencia = document.getElementById("experienciaboton");
-let habilidades = document.getElementById("habilidadesboton");
+// Obtener boton modo
+let modo = document.getElementById("modo2");
+let main = document.getElementById("principal");
+let videocontainer = document.getElementById("video-container");
+let leftcolumn = document.getElementById("left-column");
+let videocontainer2 = document.getElementById("video-container2");
+let rightcolumn = document.getElementById("right-column");
+let aside = document.getElementById("aside");
+modo.addEventListener("click", function () {
+  let mainClass = document.getElementsByClassName("main");
+  
+  console.log(mainClass)
+  console.log(mainClass.length)
+  console.log(!mainClass)
 
-// Obtener las secciones a ocultar y mostrar
-let infopersonalSeccion = document.getElementById("Informacion");
-let educacionSeccion = document.getElementById("Educacion");
-let experienciaSeccion = document.getElementById("Experiencia");
-let habilidadesSeccion = document.getElementById("Habilidades");
+  if (mainClass.length ===1) {
+    main.classList.remove('main');
+    videocontainer.classList.remove('video-container');
+    leftcolumn.classList.remove('left-column');
+    videocontainer2.classList.remove('video-container2');
+    rightcolumn.classList.remove('right-column');  
+    aside.classList.remove('fixed-buttons');
 
-// Añadir eventos de click a los botones
-info.addEventListener("click", function () {
-  verSeccion(infopersonalSeccion);
-});
-educacion.addEventListener("click", function () {
-  verSeccion(educacionSeccion);
-});
-
-experiencia.addEventListener("click", function () {
-  verSeccion(experienciaSeccion);
-});
-
-habilidades.addEventListener("click", function () {
-  verSeccion(habilidadesSeccion);
-});
-
-// Función para mostrar u ocultar una sección
-function verSeccion(section) {
-  if (section.style.display === "none") {
-    section.style.display = "block";
+    main.classList.add('main2');
+    videocontainer.classList.add('video-containera');
+    leftcolumn.classList.add('left-column2');
+    videocontainer2.classList.add('video-container2b');
+    rightcolumn.classList.add('right-column2');
+    aside.classList.add('fixed-buttons2');  
   } else {
-    section.style.display = "none";
+    let mainClass2 = document.getElementsByClassName("main2");
+  
+    if (mainClass2.length === 1) {
+    main.classList.remove('main2');
+    videocontainer.classList.remove('video-containera');
+    leftcolumn.classList.remove('left-column2');
+    videocontainer2.classList.remove('video-container2b');
+    rightcolumn.classList.remove('right-column2');  
+    aside.classList.remove('fixed-buttons2');
+
+    main.classList.add('main');
+    videocontainer.classList.add('video-container');
+    leftcolumn.classList.add('left-column');
+    videocontainer2.classList.add('video-container2');
+    rightcolumn.classList.add('right-column');
+    aside.classList.add('fixed-buttons');  
   }
-}
+  }
+});
+
 //Nav
-let sections = document.querySelectorAll("section");
+let sectiones = document.querySelectorAll("section");
 let nav = document.getElementById("nav");
 // Crear un enlace para cada sección
-sections.forEach(function (section) {
+sectiones.forEach(function (section) {
 
   let link = document.createElement("a");
   link.href = "#" + section.id;
@@ -46,7 +60,7 @@ sections.forEach(function (section) {
 
   link.addEventListener("click", function () {
     // Ocultar todas las secciones al hacer clic en un enlace
-    sections.forEach(function (section) {
+    sectiones.forEach(function (section) {
       section.style.display = "none";
     });
     // Mostrar solo la sección correspondiente al enlace clickeado
@@ -57,138 +71,13 @@ sections.forEach(function (section) {
 });
 
 
-
-
-//Función para agregar un nuevo campo a una sección específica
-function addField(sectionId, fieldName, fieldValue, fieldValue2) {
-  var section = document.getElementById(sectionId);
-  switch (section.id) {
-    case "Informacion":
-      var newField = document.createElement("div");
-      newField.innerHTML = "<p>" + fieldName + ": " + fieldValue + "</p> ";
-      section.appendChild(newField);
-      break
-    case "Educacion":
-      var newField = document.createElement("div");
-      newField.innerHTML = "<h4 id=" + fieldName + " >" + fieldName + "</h4> ";
-      section.appendChild(newField);
-      var newp = document.createElement("p");
-      var fieldN = document.getElementById(fieldName);
-      newp.innerHTML = "<p>" + fieldValue + "</p> ";
-      section.appendChild(newp);
-      break
-    case "Experiencia":
-      var newField = document.createElement("div");
-      newField.innerHTML = "<h4 id=" + fieldName + " >" + fieldName + "</h4> ";
-      section.appendChild(newField);
-      var newp = document.createElement("p");
-      var fieldN = document.getElementById(fieldName);
-      newp.innerHTML = "<p>" + fieldValue + "</p> ";
-      section.appendChild(newp);
-      var newp2 = document.createElement("p");
-      newp2.innerHTML = "<p>" + fieldValue2 + "</p> ";
-      section.appendChild(newp2);
-
-      break
-    case "Habilidades":
-      var lista = document.getElementById("lista");
-      var newField = document.createElement("li");
-      var nuevo = document.createTextNode(fieldName);
-      newField.appendChild(nuevo);
-      lista.appendChild(newField);
-
-      break
-
-    default:
-      break
-  }
-
-}
-
-//Función para modificar el valor de un campo existente en una sección específica
-function editField(sectionId, fieldName, newValue, fieldName2, newValue2, fieldName3, newValue3) {
-  var section = document.getElementById(sectionId);
-  switch (section.id) {
-    case "Informacion":
-      var fields = section.getElementsByTagName("p");
-      for (var i = 0; i < fields.length; i++) {
-        if (fields[i].innerHTML.indexOf(fieldName) !== -1) {
-          fields[i].innerHTML = "<p>" + newValue + "</p> ";
-          break;
-        }
-      }
-      break
-    case "educacionSeccion":
-      var fields = section.getElementsByTagName("h4");
-      for (var i = 0; i < fields.length; i++) {
-        if (fields[i].innerHTML.indexOf(fieldName) !== -1) {
-          fields[i].innerHTML = "<h4>" + newValue + "</h4>";
-          break;
-        }
-      }
-      var fields = section.getElementsByTagName("p");
-      for (var i = 0; i < fields.length; i++) {
-        if (fields[i].innerHTML.indexOf(fieldName2) !== -1) {
-          fields[i].innerHTML = "<p>" + newValue2 + "</p> ";
-          break;
-        }
-      }
-
-      break
-    case "experienciaSeccion":
-      var fields = section.getElementsByTagName("h4");
-      for (var i = 0; i < fields.length; i++) {
-        if (fields[i].innerHTML.indexOf(fieldName) !== -1) {
-          fields[i].innerHTML = "<h4>" + newValue + "</h4>";
-          break;
-        }
-      }
-      var fields = section.getElementsByTagName("p");
-      for (var i = 0; i < fields.length; i++) {
-        if (fields[i].innerHTML.indexOf(fieldName2) !== -1) {
-          fields[i].innerHTML = "<p>" + newValue2 + "</p> ";
-          break;
-        }
-      }
-      for (var i = 0; i < fields.length; i++) {
-        if (fields[i].innerHTML.indexOf(fieldName3) !== -1) {
-          fields[i].innerHTML = "<p>" + newValue3 + "</p> ";
-          break;
-        }
-      }
-
-      break
-    case "habilidadesSeccion":
-      var fields = section.getElementsByTagName("li");
-      for (var i = 0; i < fields.length; i++) {
-        if (fields[i].innerHTML.indexOf(fieldName) !== -1) {
-          fields[i].innerHTML = "<li>" + newValue + "</li>";
-          break;
-        }
-      }
-
-      break
-
-    default:
-      break
-  }
-}
-
-//Función para eliminar un campo existente en una sección específica
-function deleteField(sectionId, fieldName) {
-  var section = document.getElementById(sectionId);
-  var fields = section.getElementsByTagName("div");
-  for (var i = 0; i < fields.length; i++) {
-    if (fields[i].innerHTML.indexOf(fieldName) !== -1) {
-      section.removeChild(fields[i]);
-      break;
-    }
-  }
-}
-
-const boton = document.querySelector('#boton')
 const foto = document.querySelector('#foto')
 const nombre = document.querySelector('#nombre')
+const apellido = document.querySelector('#apellido')
+const edad = document.querySelector('#edad')
+const pais = document.querySelector('#pais')
+const estado = document.querySelector('#estado')
+const ciudad = document.querySelector('#ciudad')
 const correo = document.querySelector('#correo')
 const celu = document.querySelector('#celu')
 
@@ -197,16 +86,20 @@ const generarUsuario = async () => {
   const respuesta = await fetch(url);
   const { results } = await respuesta.json();
   const data = results[0]
-  console.log(data)
-
+console.log(data)
   foto.src = data.picture.large
   nombre.textContent = data.name.first
+  apellido.textContent = data.name.last
+  edad.textContent = data.dob.age
+  pais.textContent = data.location.country
+  estado.textContent = data.location.state
+  ciudad.textContent = data.location.city
   correo.textContent = data.email
   celu.textContent = data.phone
 
-  //return data;
+
 }
-boton.addEventListener('click', generarUsuario)
+window.addEventListener('load', generarUsuario)
 document.addEventListener('DOMContentLoaded', generarUsuario)
 //Validar formulario de contacto
 
@@ -238,16 +131,103 @@ form.addEventListener("submit", function(event) {
   }
 });
 
-function showButtons(event, id) {
-  const buttonContainer = document.querySelector(`#button-container2-${id}`);
-  const x = event.clientX;
-  const y = event.clientY;
-  buttonContainer.style.display = 'block';
-  buttonContainer.style.top = y + 'px';
-  buttonContainer.style.left = x + 'px';
-}
 
-function hideButtons(id) {
-  const buttonContainer = document.querySelector(`#button-container2-${id}`);
-  buttonContainer.style.display = 'none';
-}
+const groupBtn = document.querySelector('.group-btn');
+const ungroupBtn = document.querySelector('.ungroup-btn');
+const group1 = document.querySelectorAll('.group-1');
+const group2 = document.querySelectorAll('.group-2');
+const group3 = document.querySelectorAll('.group-3');
+const group4 = document.querySelectorAll('.group-4');
+const group5 = document.querySelectorAll('.group-5');
+
+groupBtn.addEventListener('click', () => {
+  group1.forEach(section => {
+    section.style.display = 'grid';
+  });
+  group2.forEach(section => {
+    section.style.display = 'grid';
+  });
+  group3.forEach(section => {
+    section.style.display = 'grid';
+  });
+  group4.forEach(section => {
+    section.style.display = 'grid';
+  });
+  group5.forEach(section => {
+    section.style.display = 'grid';
+  });
+  var video2 = document.getElementById('videopresent2');
+video2.style.display = 'none'
+});
+    
+ungroupBtn.addEventListener('click', () => {
+  group1.forEach(section => {
+    section.style.display = 'none';
+  });
+  group2.forEach(section => {
+    section.style.display = 'none';
+  });
+  group3.forEach(section => {
+    section.style.display = 'none';
+  });
+  group4.forEach(section => {
+    section.style.display = 'none';
+  });
+  group5.forEach(section => {
+    section.style.display = 'none';
+  });
+  var video2 = document.getElementById('videopresent2');
+  video2.style.display = 'block'      
+});
+
+
+const gif = document.querySelector('#img-container img');
+
+gif.addEventListener('click', () => {
+  gif.style.animationPlayState = 'paused';
+});
+
+const gif2 = document.querySelector('#img-container2 img');
+
+gif2.addEventListener('click', () => {
+  gif2.style.animationPlayState = 'paused';
+});
+
+const gif3 = document.querySelector('#img-container3 img');
+
+gif3.addEventListener('click', () => {
+  gif3.style.animationPlayState = 'paused';
+});
+
+const gif4 = document.querySelector('#img-container4 img');
+
+gif4.addEventListener('click', () => {
+  gif4.style.animationPlayState = 'paused';
+});
+
+const gif5 = document.querySelector('#img-container5 img');
+
+gif5.addEventListener('click', () => {
+  gif5.style.animationPlayState = 'paused';
+});
+
+window.addEventListener('load', function(){
+  var newVideo = document.getElementById('videopresent');
+  newVideo.addEventListener('ended', function() {
+    this.currentTime = 0;
+    this.play();
+  }, false);
+
+  newVideo.play();
+
+});
+window.addEventListener('load', function(){
+  var newVideo2 = document.getElementById('videopresent2');
+  newVideo2.addEventListener('ended', function() {
+    this.currentTime = 0;
+    this.play();
+  }, false);
+
+  newVideo2.play();
+
+});
